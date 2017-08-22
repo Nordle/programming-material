@@ -3,7 +3,7 @@
 # ruby
 # httparty, nokogiri (gem install httparty nokogiri --no-ri --no-rdoc)
 # Execute
-# ruby script.rb
+# ruby script.rb > books.md
 
 require 'httparty'
 require 'nokogiri'
@@ -20,7 +20,7 @@ def theme_url(theme)
 end
 
 def download_url(book, fmt)
-  URL + book[:theme] + '/' + FREE_PATH + FILE_PATH + book[:file_name] + fmt 
+  theme_url(book[:theme]) + FILE_PATH + book[:file_name] + fmt 
 end
 
 def get_book_info(link)
